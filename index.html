@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+    ' © Ceci est un site web personnel, tous droits réservés par Joyance, le propriétaire.'
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Blog de Joyance</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            color: #212121;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #E0E0E0;
+            }
+        }
+        header {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (prefers-color-scheme: dark) {
+            header {
+                background-color: #1E1E1E;
+            }
+        }
+        nav {
+            background-color: #FFFFFF;
+            padding: 8px 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            nav {
+                background-color: #1E1E1E;
+            }
+        }
+        nav a {
+            color: #212121;
+            text-decoration: none;
+            margin-right: 16px;
+            font-weight: 500;
+        }
+        @media (prefers-color-scheme: dark) {
+            nav a {
+                color: #E0E0E0;
+            }
+        }
+        .container {
+            padding: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 2px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        @media (prefers-color-scheme: dark) {
+            .card {
+                background-color: #2C2C2C;
+            }
+        }
+        .article {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #EEEEEE;
+        }
+        @media (prefers-color-scheme: dark) {
+            .article {
+                border-bottom-color: #424242;
+            }
+        }
+        button {
+            background-color: #212121;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        @media (prefers-color-scheme: dark) {
+            button {
+                background-color: #4A4A4A;
+                color: #E0E0E0;
+            }
+        }
+        button:hover {
+            background-color: #424242;
+        }
+        @media (prefers-color-scheme: dark) {
+            button:hover {
+                background-color: #616161;
+            }
+        }
+        .pinned {
+            border-left: 4px solid #9E9E9E;
+        }
+        @media (prefers-color-scheme: dark) {
+            .pinned {
+                border-left: 4px solid #757575;
+            }
+        }
+        .article-preview {
+            white-space: pre-wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        .article-link {
+            color: #212121;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        @media (prefers-color-scheme: dark) {
+            .article-link {
+                color: #E0E0E0;
+            }
+        }
+        .article-info {
+            font-size: 0.9em;
+            color: #757575;
+            margin-top: 8px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .article-info {
+                color: #BDBDBD;
+            }
+        }
+        .copy-button {
+            margin-left: 10px;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        /* Ajustements pour le design responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            #controls {
+                margin-top: 12px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            nav a {
+                flex: 1 0 auto;
+                text-align: center;
+                padding: 8px 0;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="headerTitle">Le Blog de Joyance</h1>
+        <div id="controls">
+            <button onclick="window.location.href='https://joyance-tsui.github.io/plog-classical'">English</button>
+            <button onclick="window.location.href='https://joyance-tsui.github.io/plog-classical'">Ancienne version</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showPage('home')" id="navHome">Accueil</a>
+        <a href="#" onclick="showPage('contact')" id="navContact">Contact</a>
+    </nav>
+
+    <div class="container" id="content">
+        <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+    </div>
+
+<script>
+    let articles = [
+        { title: 'Lancement de mon blog personnel', content: 'Voici mon premier blog personnel. Je n\'ai pas acheté de nom de domaine séparé, les fonctionnalités ne sont pas complètes (le retour à la ligne n\'est pas encore pris en charge), et les articles sont directement', pinned: true, wordCount: 452, url: 'https://example.com/article1' },
+        { title: 'Le monopole des VTC', content: 'Aujourd\'hui, sur le chemin du retour en VTC, le chauffeur m\'a parlé des nombreux traitements injustes que les chauffeurs subissent de la part des plateformes de VTC, ce qui m\'a donné quelques idées. C', pinned: false, wordCount: 3000, url: 'https://example.com/article2' },
+    ];
+
+    function showPage(page) {
+        let content = '';
+        if (page === 'home') {
+            content = '<div class="card"><h2>❏ Bienvenue sur mon blog personnel</h2><p>Un blog est un site web d\'information composé d\'entrées textuelles discrètes, généralement informelles de type journal (posts). C\'est un site web ou un journal en ligne géré par un individu pour publier de nouveaux articles, images ou vidéos, pour enregistrer, exprimer des émotions ou partager des informations.</p></div>';
+            articles.forEach(article => {
+                const previewContent = article.content.slice(0, 200) + '...';
+                const wordCount = article.wordCount;
+                const readingTime = Math.ceil(wordCount / 200); // Supposons une vitesse de lecture de 200 mots par minute
+                content += `
+                    <div class="card ${article.pinned ? 'pinned' : ''}">
+                        <h3>${article.title}</h3>
+                        <div class="article-preview">${previewContent}</div>
+                        <div class="article-info">
+                            Nombre de mots : ${wordCount} | Temps de lecture : environ ${readingTime} minute${readingTime > 1 ? 's' : ''}
+                            <a href="${article.url}" class="article-link" target="_blank">Lire la suite</a>
+                        </div>
+                    </div>
+                `;
+            });
+        } else if (page === 'contact') {
+            content = `
+                <div class="card">
+                    <h2>Informations de contact</h2>
+                    <p>Email : guangyinzhong@outlook.com <button class="copy-button" onclick="copyToClipboard('guangyinzhong@outlook.com')">Copier</button></p>
+                    <p>WeChat : Jiayue-Cui <button class="copy-button" onclick="copyToClipboard('Jiayue-Cui')">Copier</button></p>
+                    <p>Twitter : @Xixiphus_Jiayue <button class="copy-button" onclick="copyToClipboard('@Xixiphus_Jiayue')">Copier</button></p>
+                </div>
+            `;
+        }
+        document.getElementById('content').innerHTML = content;
+    }
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function() {
+            alert('Copié dans le presse-papiers');
+        }, function(err) {
+            console.error('Impossible de copier le texte : ', err);
+        });
+    }
+
+    // Chargement initial de la page d'accueil
+    showPage('home');
+</script>
+</body>
+</html>
