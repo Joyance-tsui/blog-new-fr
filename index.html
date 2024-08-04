@@ -202,7 +202,8 @@
 <script>
     let articles = [
         { title: 'Lancement de mon blog personnel', content: 'Voici mon premier blog personnel. Je n\'ai pas acheté de nom de domaine séparé, les fonctionnalités ne sont pas complètes (le retour à la ligne n\'est pas encore pris en charge), et les articles sont directement', pinned: true, wordCount: 452, url: 'https://joyance-tsui.github.io/AAAB-fr/' },
-        { title: 'Le monopole des services chinois de covoiturage', content: 'Aujourd\'hui, sur le chemin du retour en VTC, le chauffeur m\'a parlé des nombreux traitements injustes que les chauffeurs subissent de la part des plateformes de VTC, ce qui m\'a donné quelques idées. C', pinned: false, wordCount: 3000, url: 'https://joyance-tsui.github.io/AAAC-fr/' },
+        { title: 'Le monopole des services chinois de covoiturage', content: 'Aujourd\'hui, sur le chemin du retour en VTC, le chauffeur m\'a parlé des nombreux traitements injustes que les chauffeurs subissent de la part des plateformes de VTC, ce qui m\'a donné quelques idées. C', pinned: false, wordCount: 500, url: 'https://joyance-tsui.github.io/AAAC-fr/' },
+        { title: '1984 - La forme ultime du totalitarisme', content: 'Je viens de terminer la lecture du roman dystopique "1984" et j\'ai réalisé qu\'il vaut vraiment la peine de lire la version originale. Les autres interprétations ont tendance à compresser le contenu du livre original', pinned: false, wordCount: 1950, url: 'https://joyance-tsui.github.io/AAAC-fr/' },
     ];
 
     function showPage(page) {
@@ -212,7 +213,7 @@
             articles.forEach(article => {
                 const previewContent = article.content.slice(0, 200) + '...';
                 const wordCount = article.wordCount;
-                const readingTime = Math.ceil(wordCount / 200); // Supposons une vitesse de lecture de 200 mots par minute
+                const readingTime = Math.ceil(wordCount / 150); // Supposons une vitesse de lecture de 200 mots par minute
                 content += `
                     <div class="card ${article.pinned ? 'pinned' : ''}">
                         <h3>${article.title}</h3>
